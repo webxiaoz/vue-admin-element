@@ -1,11 +1,11 @@
 <template>
   <fragment>
     <template v-for="route in routeList">
-      <el-menu-item v-if="hasOneShowingChild(route.children,route)" :key="route.path" :index="route.path">
+      <el-menu-item v-if="hasOneShowingChild(route.children,route)" :key="route.path" :index="route.meta.title">
 <!--        <i :class="route.meta.icon"></i>-->
         <span slot="title">{{route.meta.title}}</span>
       </el-menu-item>
-      <el-submenu v-else :index="route.path">
+      <el-submenu v-else :index="route.meta.title">
         <template slot="title" v-if="onlyOneChild.meta">
           <!--          <i :class="route.meta.icon"></i>-->
           <span slot="title">{{ route.meta.title }}</span>

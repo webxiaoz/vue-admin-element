@@ -1,6 +1,6 @@
 <template>
   <el-container style="min-height: 100vh;">
-    <el-aside width="200px" style="background-color: #001528;">
+    <el-aside width="200px" style="background-color: #010101;">
       <el-menu
           :default-active="menuActive"
           class="el-menu-vertical-demo"
@@ -48,7 +48,7 @@ export default {
   computed: {
     /*** @Description: 菜单联动（激活时候对应值）*/
     menuActive() {
-      return this.$route.path;
+      return this.$route.meta.title;
     },
     /*** @Description: 过滤不符合条件的菜单*/
     menuList() {
@@ -62,7 +62,7 @@ export default {
     /*** @Description: 菜单跳转*/
     changeRoute(index, indexPath) {
       console.log(index,indexPath);
-      this.$router.push(index)
+      this.$router.push({name:index})
     },
     /*** @Description: 菜单折叠*/
     Collapse() {
@@ -101,25 +101,25 @@ export default {
 
 <style scoped>
 /*路由动画样式*/
-.slide-fade {
-  position: absolute;
-  left: 0;
-  right: 0;
-}
+/*.slide-fade {*/
+/*  position: absolute;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*}*/
 
-.slide-fade-enter-active {
-  transition: all .5s ease;
-}
+/*.slide-fade-enter-active {*/
+/*  transition: all .5s ease;*/
+/*}*/
 
-.slide-fade-leave-active {
+/*.slide-fade-leave-active {*/
 
-  transition: all .3s cubic-bezier(2.0, 0.5, 0.8, 1.0);
-}
+/*  transition: all .3s cubic-bezier(2.0, 0.5, 0.8, 1.0);*/
+/*}*/
 
-.slide-fade-enter, .slide-fade-leave-to {
-  left: 0;
-  right: 0;
-  transform: translateX(50px);
-  opacity: 0;
-}
+/*.slide-fade-enter, .slide-fade-leave-to {*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  transform: translateX(50px);*/
+/*  opacity: 0;*/
+/*}*/
 </style>
