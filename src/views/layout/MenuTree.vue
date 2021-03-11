@@ -1,13 +1,13 @@
 <template>
   <fragment>
     <template v-for="route in routeList">
-      <el-menu-item v-if="hasOneShowingChild(route.children,route)" :key="route.path" :index="route.meta.title">
-<!--        <i :class="route.meta.icon"></i>-->
+      <el-menu-item v-if="hasOneShowingChild(route.children,route) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!route.alwaysShow" :key="route.path" :index="route.meta.title">
+        <i :class="route.meta.icon"></i>
         <span slot="title">{{route.meta.title}}</span>
       </el-menu-item>
-      <el-submenu v-else :index="route.meta.title">
+      <el-submenu v-else :index="route.meta.title" :key="route.path">
         <template slot="title" v-if="onlyOneChild.meta">
-          <!--          <i :class="route.meta.icon"></i>-->
+                    <i :class="route.meta.icon"></i>
           <span slot="title">{{ route.meta.title }}</span>
         </template>
         <MenuTree :routeList="route.children"></MenuTree>
@@ -21,9 +21,7 @@
     name: 'MenuTree',
     data(){
       this.onlyOneChild = null;
-      return{
-        onlyOneChild:{}
-      }
+      return{}
     },
     props:{
       routeList:{
@@ -68,6 +66,9 @@
       //   }
       //   return path.resolve(this.basePath, routePath)
       // }
+    },
+    mounted() {
+      console.log(this.routeList)
     }
   }
 </script>

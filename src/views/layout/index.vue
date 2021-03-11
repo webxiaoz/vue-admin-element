@@ -16,10 +16,15 @@
       </el-menu>
     </el-aside>
     <el-container>
-      <el-header style="background-color:gray;">Header</el-header>
-      <el-main style="background-color: #eeee;min-height: 500px;">
+      <el-header class="header">
+        <User class="fr"></User>
+      </el-header>
+      <el-main style="background-color: #eeee;min-height: 500px;padding: 0;">
+        <div class="tags-view-container" style="height: 30px;">
+          <Breadcrumb></Breadcrumb>
+        </div>
         <transition name="slide-fade">
-          <router-view class='router'></router-view>
+          <router-view class='router' style="margin: 20px;"></router-view>
         </transition>
       </el-main>
     </el-container>
@@ -28,7 +33,9 @@
 
 <script>
 import Routes from '@/router'
-import MenuTree from "@/views/layout/menutree";
+import MenuTree from "@/views/layout/MenuTree";
+import User from "@/views/layout/User";
+import Breadcrumb from "@/views/layout/Breadcrumb";
 export default {
   name: "Layout",
   data() {
@@ -44,7 +51,7 @@ export default {
       timer: null,
     }
   },
-  components:{MenuTree},
+  components:{MenuTree,User,Breadcrumb},
   computed: {
     /*** @Description: 菜单联动（激活时候对应值）*/
     menuActive() {

@@ -19,14 +19,15 @@ export const constantRouterMap = [
     {
         path: '/login',
         name:'Login',
-        component: () => import('@/views/login/index'),
+        component: () => import('@/views/login'),
         hidden: true
     },
     {
         path: '/',
         component: Layout,
         redirect: '/dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard' },
+        meta: { title: 'Dashboard', icon: 'el-icon-s-help' },
+        alwaysShow: false,
         children: [{
             path: 'dashboard',
             name: 'Dashboard',
@@ -40,17 +41,18 @@ export const constantRouterMap = [
         redirect: '/example/table',
         name: 'Example',
         meta: { title: 'Example', icon: 'el-icon-s-help' },
+        alwaysShow: false,
         children: [
             {
                 path: '/example/table',
                 name: 'Table',
-                component: () => import('@/views/table/index'),
+                component: () => import('@/views/table/Table'),
                 meta: { title: 'Table', icon: 'table' }
             },
             {
                 path: '/example/tree',
                 name: 'Tree',
-                component: () => import('@/views/table/tree'),
+                component: () => import('@/views/table/Tree'),
                 meta: { title: 'Tree', icon: 'table' }
             },
         ]

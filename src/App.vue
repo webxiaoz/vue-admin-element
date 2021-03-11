@@ -12,6 +12,8 @@ export default {
 
 <style>
 @import "assets/css/base.css";
+@import "assets/css/index.css";
+@import "assets/theme/index.css";
 #app {
   padding: 0;
   margin: 0;

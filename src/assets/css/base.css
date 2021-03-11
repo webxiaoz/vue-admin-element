@@ -13,6 +13,12 @@ table { border-collapse:collapse; }
 li {list-style: none;}
 .clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
 .clearfix { *zoom:1; }
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
 .mb10{
     margin-bottom: 10px;
 }
