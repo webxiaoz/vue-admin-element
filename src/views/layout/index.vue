@@ -5,7 +5,7 @@
       <div :class="{'fixed-header':fixedHeader}">
         <NavBar />
       </div>
-
+      <AppMain/>
     </div>
   </div>
 </template>
@@ -14,6 +14,7 @@
 import Routes from '@/router'
 import SideBar from '@/views/layout/SideBar'
 import NavBar from "@/views/layout/NavBar";
+import AppMain from "@/views/layout/AppMain";
 export default {
   name: "Layout",
   data() {
@@ -21,7 +22,7 @@ export default {
       fixedHeader: true
     }
   },
-  components:{NavBar,SideBar},
+  components:{NavBar,SideBar,AppMain},
   computed: {
     /*** @Description: 菜单联动（激活时候对应值）*/
     menuActive() {
@@ -47,7 +48,7 @@ export default {
 .app-wrap{
   width: 100%;
   height: 100vh;
-  position: relative;
+  //position: relative;
   display: flex;
   margin: 0 auto;
   .sidebar-container{
@@ -58,10 +59,10 @@ export default {
     flex: 1;
   }
   .fixed-header{
-    width: calc(100% - 200px);
-    position: fixed;
-    top: 0;
-    right: 0;
+    //width: calc(100% - 200px);
+    //position: fixed;
+    //top: 0;
+    //right: 0;
     z-index: 9;
   }
 }

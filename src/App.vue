@@ -14,6 +14,7 @@ export default {
 @import "assets/css/base.css";
 @import "assets/css/index.css";
 @import "assets/theme/index.css";
+@import "assets/css/transition.scss";
 #app {
   padding: 0;
   margin: 0;

@@ -15,6 +15,8 @@ Vue.use(ElementUI);
 import Fragment from 'vue-fragment'
 Vue.use(Fragment.Plugin)
 
+import './permission'
+
 new Vue({
   router,
   render: h => h(App),

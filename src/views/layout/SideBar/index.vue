@@ -1,17 +1,19 @@
 <template>
-  <el-menu
-      :default-active="menuActive"
-      class="el-menu-vertical-demo"
-      background-color="#001528"
-      text-color="#8aa9cf"
-      active-text-color="#fff"
-      :style="asideWidth"
-      :isCollapse="isCollapse"
-      :collapse="isCollapse"
-      @select="changeRoute"
-  >
-    <MenuTree :routeList="menuList"></MenuTree>
-  </el-menu>
+<!--  <el-scrollbar class="scrollbar-wrapper">-->
+    <el-menu
+        :default-active="menuActive"
+        class="el-menu-vertical-demo"
+        background-color="#001528"
+        text-color="#8aa9cf"
+        active-text-color="#fff"
+        :style="asideWidth"
+        :isCollapse="isCollapse"
+        :collapse="isCollapse"
+        @select="changeRoute"
+    >
+      <MenuTree :routeList="menuList"></MenuTree>
+    </el-menu>
+<!--  </el-scrollbar>-->
 </template>
 
 <script>
